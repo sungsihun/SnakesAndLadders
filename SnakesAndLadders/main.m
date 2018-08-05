@@ -7,11 +7,21 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "InputHandler.h"
+
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        // insert code here...
-        NSLog(@"Hello, World!");
+        
+        NSLog(@"\n\n========== Snakes & Ladders==========\n\n========== Welcome!!! \n\n==========to start type 'roll' ");
+        
+        NSLog(@"you enter >>> %@", [InputHandler getInput]);
+        
+        while (TRUE) {
+            
+        }
+        
+        
     }
     return 0;
 }
