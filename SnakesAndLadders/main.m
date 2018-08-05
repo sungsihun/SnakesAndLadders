@@ -14,15 +14,16 @@ int main(int argc, const char * argv[]) {
     @autoreleasepool {
         Player *player = [[Player alloc] init];
         
-        NSLog(@"\n\n========== Snakes & Ladders==========\n\n========== Welcome!!! \n\n==========to start type 'roll' ");
+        NSLog(@"\n\n========== Snakes & Ladders==========\n\n========== Welcome!!! \n\n==========to start type 'roll' or 'r' ");
         
         
         while (TRUE) {
-            NSLog(@"you enter >>> %@", [InputHandler getInput]);
-            [player roll];
+            NSString *inputString = [[NSString alloc] init];
+            inputString = [InputHandler getInput];
+            if ([inputString  isEqual: @"roll"] || [inputString  isEqual: @"r"]){
+                [player roll];
+            }
         }
-        
-        
     }
     return 0;
 }
