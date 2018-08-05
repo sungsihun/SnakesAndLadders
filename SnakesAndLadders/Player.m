@@ -39,7 +39,7 @@
     self.currentSquare += dice;
     
     if (self.currentSquare < 100) {
-        NSLog(@"You landed on %ld", self.currentSquare);
+        NSLog(@"%@ landed on %ld", self.name, self.currentSquare);
         
         for (NSNumber *key in self.gameLogic) {
             
