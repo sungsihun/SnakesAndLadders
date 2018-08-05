@@ -16,9 +16,9 @@ int main(int argc, const char * argv[]) {
         
         NSLog(@"\n\n========== Snakes & Ladders==========\n\n========== Welcome!!! \n\n==========to start type 'roll' ");
         
-        NSLog(@"you enter >>> %@", [InputHandler getInput]);
         
         while (TRUE) {
+            NSLog(@"you enter >>> %@", [InputHandler getInput]);
             [player roll];
         }
         
