@@ -18,6 +18,12 @@ int main(int argc, const char * argv[]) {
         
         
         while (TRUE) {
+            
+            if (player.gameOver == YES) {
+                NSLog(@"========== GAME OVER ==========");
+                break;
+            }
+            
             NSString *inputString = [[NSString alloc] init];
             inputString = [InputHandler getInput];
             if ([inputString  isEqual: @"roll"] || [inputString  isEqual: @"r"]){

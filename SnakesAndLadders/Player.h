@@ -10,7 +10,7 @@
 
 @interface Player : NSObject
 
-
+@property (nonatomic) BOOL gameOver;
 @property (nonatomic) NSInteger currentSquare;
 @property (nonatomic) NSDictionary *gameLogic;
 

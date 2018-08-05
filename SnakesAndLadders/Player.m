@@ -12,6 +12,7 @@
 
 - (instancetype)init {
     if (self = [super init]) {
+        _gameOver = NO;
         _currentSquare = 0;
         _gameLogic = @{
                         @4 : @14,
@@ -36,20 +37,25 @@
     NSLog(@"🎲 You rolled 🎲 >>>> %ld", dice);
     
     self.currentSquare += dice;
-    NSLog(@"You landed on %ld", self.currentSquare);
     
-    for (NSNumber *key in self.gameLogic) {
+    if (self.currentSquare < 100) {
+        NSLog(@"You landed on %ld", self.currentSquare);
         
-        if ([key isEqualToNumber:[NSNumber numberWithInteger:self.currentSquare]]) {
+        for (NSNumber *key in self.gameLogic) {
             
-            if (key < self.gameLogic[key]){
-                NSLog(@"Stairway to heaven!");
-            } else {
-                NSLog(@"🐍");
+            if ([key isEqualToNumber:[NSNumber numberWithInteger:self.currentSquare]]) {
+                
+                if (key < self.gameLogic[key]){
+                    NSLog(@"Stairway to heaven!");
+                } else {
+                    NSLog(@"🐍");
+                }
+                NSLog(@"You jumped from %ld to %@", self.currentSquare, self.gameLogic[key]);
+                self.currentSquare = [self.gameLogic[key] intValue];
             }
-            NSLog(@"You jumped from %ld to %@", self.currentSquare, self.gameLogic[key]);
-            self.currentSquare = [self.gameLogic[key] intValue];
         }
+    } else {
+        self.gameOver = YES;
     }
 }
 
